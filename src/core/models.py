@@ -21,8 +21,8 @@ class Device(models.Model):
 class DeviceLocation(models.Model):
     """Class that represents the mobile device location"""
     device  = models.ForeignKey(Device, verbose_name=_(u'Device'))
-    lat     = models.DecimalField(verbose_name='Latitude', max_digits=8, decimal_places=2)
-    lon     = models.DecimalField(verbose_name='longitude', max_digits=8, decimal_places=2)
+    lat     = models.DecimalField(verbose_name=_(u'Latitude'), max_digits=8, decimal_places=2)
+    lon     = models.DecimalField(verbose_name=_(u'Longitude'), max_digits=8, decimal_places=2)
     created = models.DateTimeField(verbose_name=_(u'Date of occurrence'))
 
     class Meta:
