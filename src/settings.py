@@ -115,7 +115,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Third party apps
     #
-    # Condbox apps
+    # FindMyDevice apps
     'core',
 )
 
