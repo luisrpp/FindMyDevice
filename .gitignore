@@ -1,0 +1,10 @@
+bin
+build
+include
+lib
+local
+Scripts
+.Python
+*.py~
+*.pyc
+.DS_Store

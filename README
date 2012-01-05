@@ -1,0 +1,5 @@
+FindMyDevice is a web based application that stores the location of your mobile device.
+
+An Android app will also be developed to send the information to the website.
+
+Web framework: Django
