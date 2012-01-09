@@ -38,8 +38,7 @@
                 lon: lon,
             },
             function( data ) {
-                var content = $( data ).find( '#content' );
-                $( "#result" ).empty().append( content );
+                alert(data);
             }, 'json'
         );
     });
