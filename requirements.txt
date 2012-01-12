@@ -1,3 +1,3 @@
 django
 django-registration
-jsonrpc
+django-json-rpc

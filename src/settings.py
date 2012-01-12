@@ -114,7 +114,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     # Third party apps
-    #
+    'jsonrpc',
     # FindMyDevice apps
     'core',
 )
