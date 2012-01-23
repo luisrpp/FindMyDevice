@@ -1,3 +1,3 @@
 django
 django-registration
-django-json-rpc
+django-piston

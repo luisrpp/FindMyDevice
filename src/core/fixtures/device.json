@@ -1,0 +1,12 @@
+[
+    {
+        "pk": 1, 
+        "model": "core.device", 
+        "fields": {
+            "device_description": "Samsung Galaxy SII", 
+            "user": 1, 
+            "device_mobile_id": "2BGVR5UPX", 
+            "device_name": "Galaxy S2"
+        }
+    }
+]

@@ -1,0 +1,62 @@
+body {
+    font-family: arial;
+    background-color: #eee;
+    color: #333;
+}
+
+a { color: #33a; }
+a:visited { color: #33a; }
+a:hover { color: #009; }
+
+header {
+    border-bottom: 1px dotted #777;
+}
+
+header #logo {
+    background: #fff url(../images/logo.png) no-repeat top center;
+    width:231px;
+    height:88px;
+    display:block;
+    padding-right:20px;
+}
+
+#container {
+    width:960px;
+    margin:20px auto;
+    color:#555;
+    background-color:#fff;
+    border: 1px dotted #777;
+}
+
+#main {
+    font-size:16px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:20px;
+}
+
+#main h1 {
+    text-decoration: underline;
+}
+
+.hidetext {
+    font-size:0;
+    line-height:0;
+    text-indent:-9999px;
+}
+
+#djangologo {
+    background: #fff url(../images/djangomade.gif) no-repeat top center;
+    width:124px;
+    height:25px;
+    margin-right:20px;
+    margin-top:10px;
+    display:block;
+    float:right;
+}
+
+footer {
+    font-size:14px;
+    padding-left:20px;
+    border-top:1px dotted #777;
+}

@@ -8,3 +8,4 @@ Scripts
 *.py~
 *.pyc
 .DS_Store
+database.db

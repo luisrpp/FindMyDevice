@@ -1,0 +1,46 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "luisrpp", 
+            "first_name": "Luis Roberto", 
+            "last_name": "Pereira de Paula", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2012-01-23 13:57:13", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$883ad$7153ccf913211e622ac2e1b4eded9ba4ac8f0158", 
+            "email": "luisrpp@gmail.com", 
+            "date_joined": "2012-01-17 11:05:22"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "foo", 
+            "first_name": "foo", 
+            "last_name": "bar", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2012-01-23 17:28:11", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$06041$eb2baa80bbcc4b02323c1be36df283b81607560c", 
+            "email": "foofoobar@foobar.com", 
+            "date_joined": "2012-01-23 17:28:11"
+        }
+    },
+    {
+        "pk": 1, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "127.0.0.1:8000", 
+            "name": "FindMyDevice"
+        }
+    }
+]
