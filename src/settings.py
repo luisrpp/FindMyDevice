@@ -114,11 +114,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     # Third party apps
-    #
+    'registration',
     # FindMyDevice apps
     'core',
     'api',
 )
+
+ACCOUNT_ACTIVATION_DAYS = 7
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

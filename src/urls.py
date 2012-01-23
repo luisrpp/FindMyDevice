@@ -7,6 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     (r'^$', 'core.views.homepage', {'template': 'index.html'}),
+    (r'^accounts/', include('registration.urls')),
     (r'^api/', include('api.urls')),
 )
 
