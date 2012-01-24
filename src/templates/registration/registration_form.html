@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if not created %}
+        <h1>Create a FindMyDevice Account</h1>
+        <form action="." method="POST">
+           {% csrf_token %}
+           {{ form.as_p }}
+           <input type="submit" value="Create Account" class="button">
+        </form>
+{% else %}
+        <h1>Please check your mailbox for account activation!</h1>
+{% endif %}
+
+{% endblock content %}
