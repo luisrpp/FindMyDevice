@@ -2,4 +2,3 @@ django
 django-registration
 django-piston
 psycopg2
-
