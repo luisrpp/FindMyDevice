@@ -22,13 +22,12 @@ following context:
     <http://docs.djangoproject.com/en/dev/ref/contrib/sites/>`_ for
     details regarding these objects' interfaces.
 {% endcomment %}{% load i18n %}
-{% url registration_activate_url activation_key as activate_url %}
 {% blocktrans with site.name as site_name and site.domain as site_domain %}
 Dear,
 
 You have created an account for {{ site_name }}, which has to
 be activated. To do this, please follow the following link:
-http://{{ site_domain }}{{ activate_url }}
+http://{{ site_domain }}/accounts/activate/{{ activation_key }}/
 
 Please do take note that if your activation does not succeed
 within {{ expiration_days }} days, you will have to restart
