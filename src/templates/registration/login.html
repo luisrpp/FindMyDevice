@@ -1,16 +1,24 @@
 {% extends "base.html" %}
 {% load url from future %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/login.css">
+{% endblock stylesheets %}
+
 {% block content %}
 
-        <p>&nbsp;</p>
+        <h1>Welcome to FindMyDevice</h1>
 
         <img src="{{ STATIC_URL }}images/location_main.png">
 
-        <h1>Login</h1>
+<div class="login">
+    <div id="container">
+        <div id="header-login">
+            <h1>Login</h1>
+        </div>
 
         {% if form.errors %}
-            <p>Invalid username or password!</p>
+            <p id="invalid_form">Invalid username or password!</p>
         {% endif %}
 
         <form id="login-form" method="post">
@@ -28,5 +36,8 @@
             </div>
             <input type="hidden" name="next" value="{{ next }}" />
         </form>
+        <a href="#" id="createacc">Create an account</a>
+    </div>
+</div>
 
 {% endblock content %}

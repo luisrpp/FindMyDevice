@@ -55,6 +55,35 @@ header #logo {
     float:right;
 }
 
+#login_base {
+    font-size:15px;
+    font-weight: bold;
+    color: #345;
+    margin-top:10px;
+    margin-right:20px;
+    display:block;
+    float: right;
+    text-decoration: none;
+}
+
+#logout_base {
+    font-size:12px;
+    font-weight: bold;
+    color: #123;
+    text-decoration: none;
+}
+
+#hello_message {
+    font-size:15px;
+    font-weight: bold;
+    color: #345;
+    margin-top:10px;
+    margin-right:20px;
+    display:block;
+    float: right;
+    text-decoration: none;
+}
+
 footer {
     font-size:14px;
     padding-left:20px;
