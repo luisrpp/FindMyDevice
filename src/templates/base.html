@@ -1,3 +1,4 @@
+{% load url from future %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +15,7 @@
     <header>
         <a href="/" id="logo"></a>
         {% if user.is_authenticated %}
-            <p id="hello_message">Hello, <a href="/accounts/profile/">{{ user.username }}</a>! <a href="/accounts/logout" id="logout_base">(logout)</a></p>
+            <p id="hello_message">Hello, <a href="{% url 'profile' %}">{{ user.username }}</a>! <a href="{% url 'logout' %}" id="logout_base">(logout)</a></p>
         {% else %}
             <a href="/accounts/login" id="login_base">Login</a>
         {% endif %}

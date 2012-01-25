@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic.simple import direct_to_template
 from django.contrib import admin
 
 admin.autodiscover()
@@ -8,7 +9,7 @@ urlpatterns = patterns('',
     # Admin
     url(r'^admin/', include(admin.site.urls)),
     # Home
-    (r'^$', 'core.views.homepage', {'template': 'index.html'}),
+    (r'^$', direct_to_template, {'template': 'index.html'}),
     # User profile
     url(r'^accounts/profile/$', 'core.views.profile', name='profile'),
     # Logout using django.contrib.auth
@@ -17,7 +18,8 @@ urlpatterns = patterns('',
     (r'^accounts/', include('registration.urls')),
     # RESTful APIs
     (r'^api/', include('api.urls')),
-    url(r'^add_device/$', 'core.views.add_device', name='add_device'),
+    # Include core.urls
+    (r'^', include('core.urls', namespace='core')),
 )
 
 urlpatterns += staticfiles_urlpatterns()
