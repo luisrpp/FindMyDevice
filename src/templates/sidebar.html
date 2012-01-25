@@ -1,0 +1,18 @@
+{% load gravatar %}
+
+    <div id="sidebar">
+        <img src="{% gravatar user.email %}">
+        <ul class="menu">
+            <li><a href="/accounts/profile/">Profile</a></li>
+            <li><a href="/add_device/">Add device</a></li>
+            {% if devices %}
+            <li>Devices
+                <ul class="submenu">
+                    {% for device in devices %}
+                    <li><a href="#">{{ device.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endif %}
+        </ul>
+    </div>

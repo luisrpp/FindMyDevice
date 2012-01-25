@@ -25,7 +25,7 @@ class DeviceLocationHandler(BaseHandler):
         attrs = self.flatten_dict(request.POST)
 
         try:
-            device = Device.objects.get(user=request.user, device_name=attrs['device_name'], device_mobile_id=attrs['device_id'])
+            device = Device.objects.get(user=request.user, name=attrs['device_name'], mobile_id=attrs['device_id'])
         except Device.DoesNotExist:
             return rc.NOT_FOUND
 

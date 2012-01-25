@@ -1,24 +1,12 @@
 {% extends 'base.html' %}
-{% load gravatar %}
 
 {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/menu.css">
 {% endblock stylesheets %}
 
 {% block content %}
-    <div id="sidebar">
-        <img src="{% gravatar user.email %}">
-        <ul class="menu">
-            <li><a href="/accounts/profile/">Profile</a></li>
-            <li><a href="#">Add device</a></li>
-            <li>Devices
-                <ul class="submenu">
-                    <li><a href="#">Device 1</a></li>
-                    <li><a href="#">Device 2</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    {% include "sidebar.html" %}
+
     <div id="content">
         <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
     </div>

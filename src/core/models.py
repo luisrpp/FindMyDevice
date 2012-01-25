@@ -14,17 +14,17 @@ def id_generator(size=9, chars=string.ascii_uppercase + string.digits):
 class Device(models.Model):
     """Class that represents the mobile device"""
     user = models.ForeignKey(User, verbose_name=_(u'User'))
-    device_name = models.CharField(verbose_name=_(u'Name'), max_length=40)
-    device_description = models.CharField(verbose_name=_(u'Description'), max_length=100)
-    device_mobile_id = models.CharField(verbose_name=_(u'Mobile identifier'), max_length=9, default=id_generator)
+    name = models.CharField(verbose_name=_(u'Name'), max_length=40)
+    description = models.CharField(verbose_name=_(u'Description'), max_length=100)
+    mobile_id = models.CharField(verbose_name=_(u'Mobile identifier'), max_length=9, default=id_generator)
 
     class Meta:
-        ordering = ['device_name']
+        ordering = ['name']
         verbose_name = _(u'Device')
         verbose_name_plural = _(u'Devices')
 
     def __unicode__(self):
-        return self.device_name
+        return self.name
 
 
 class DeviceLocation(models.Model):
@@ -40,4 +40,4 @@ class DeviceLocation(models.Model):
         verbose_name_plural = _(u'Devices Locations')
 
     def __unicode__(self):
-        return self.device.device_name
+        return self.device.name
