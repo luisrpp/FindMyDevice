@@ -3,8 +3,6 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required
 
-from core.models import Device
-
 
 def homepage(request, template=None):
     context = RequestContext(request)
@@ -13,8 +11,7 @@ def homepage(request, template=None):
 
 @login_required
 def profile(request):
-    devices = Device.objects.filter(user=request.user)
-    context = RequestContext(request, {'devices': devices})
+    context = RequestContext(request)
     return render_to_response('profile.html', context)
 
 
