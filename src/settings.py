@@ -118,9 +118,12 @@ INSTALLED_APPS = (
     # FindMyDevice apps
     'core',
     'api',
+    'embed',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
+
+GRAVATAR_SIZE = 120
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

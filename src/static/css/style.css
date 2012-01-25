@@ -85,6 +85,7 @@ header #logo {
 }
 
 footer {
+    clear:both;
     font-size:14px;
     padding-left:20px;
     border-top:1px dotted #777;

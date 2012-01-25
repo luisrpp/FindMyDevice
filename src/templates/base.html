@@ -14,7 +14,7 @@
     <header>
         <a href="/" id="logo"></a>
         {% if user.is_authenticated %}
-            <p id="hello_message">Hello, {{ user.username }}! <a href="/accounts/logout" id="logout_base">(logout)</a></p>
+            <p id="hello_message">Hello, <a href="/accounts/profile/">{{ user.username }}</a>! <a href="/accounts/logout" id="logout_base">(logout)</a></p>
         {% else %}
             <a href="/accounts/login" id="login_base">Login</a>
         {% endif %}
@@ -25,7 +25,7 @@
     </div>
     <footer>
         <a href="https://www.djangoproject.com" id="djangologo" class="hidetext" title="Powered by Django">Powered by Django</a>
-        <p>&copy; 2011 <a href="/">FindMyDevice</a>. Some rights reserved.</p>
+        <p>&copy; 2012 <a href="/">FindMyDevice</a>. Some rights reserved.</p>
     </footer>
 </div>
 
