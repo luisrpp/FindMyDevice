@@ -3,3 +3,6 @@ FindMyDevice is a web based application that stores the location of your mobile 
 An Android app will also be developed to send the information to the website.
 
 Web framework: Django
+
+http://findmydevice-luisrpp.herokuapp.com/
+
