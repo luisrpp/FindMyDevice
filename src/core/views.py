@@ -49,3 +49,10 @@ def success_device(request, pk):
     device = get_object_or_404(Device, pk=pk, user=request.user)
     context = RequestContext(request, {'device': device})
     return render_to_response('core/success_device.html', context)
+
+
+@login_required
+def device(request, pk):
+    device = get_object_or_404(Device, pk=pk, user=request.user)
+    context = RequestContext(request, {'device': device})
+    return render_to_response('core/device.html', context)

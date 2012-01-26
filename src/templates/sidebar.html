@@ -10,7 +10,7 @@
             <li>Devices
                 <ul class="submenu">
                     {% for device in devices %}
-                    <li><a href="#">{{ device.name }}</a></li>
+                    <li><a href="{% url 'core:device' device.pk %}">{{ device.name }}</a></li>
                     {% endfor %}
                 </ul>
             </li>
