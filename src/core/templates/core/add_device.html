@@ -1,0 +1,9 @@
+{% extends 'profile.html' %}
+{% block content_right %}
+        <h1>Register a new device</h1>
+        <form action="." method="POST">
+           {% csrf_token %}
+           {{ form.as_p }}
+           <input type="submit" value="Create" class="button">
+        </form>
+{% endblock content_right %}
