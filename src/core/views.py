@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
-from core.models import Device
+from core.models import Device, DeviceLocation
 from core.forms import DeviceForm
 
 
@@ -54,5 +54,6 @@ def success_device(request, pk):
 @login_required
 def device(request, pk):
     device = get_object_or_404(Device, pk=pk, user=request.user)
-    context = RequestContext(request, {'device': device})
+    locations = DeviceLocation.objects.filter(device=device)
+    context = RequestContext(request, {'device': device, 'locations': locations})
     return render_to_response('core/device.html', context)

@@ -3,7 +3,8 @@
 {% block stylesheets %}
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/menu.css">
-    <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/maps.css">
+
     <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript">
       var geocoder;
@@ -21,7 +22,7 @@
         map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
       }
 
-      function codeLatLng(myLatLng) {
+      function codeLatLng(myLatLng, locAddress) {
         var input = myLatLng;//document.getElementById("latlng").value;
         var latlngStr = input.split(",",2);
         var lat = parseFloat(latlngStr[0]);
@@ -35,7 +36,7 @@
                   position: latlng, 
                   map: map
               }); 
-              infowindow.setContent("{{ device.name }}");
+              infowindow.setContent("<span style='font-size: 12px'><strong>{{ device.name }}</strong><br>" + locAddress + "</span>");
               infowindow.open(map, marker);
             } else {
               alert("No results found");
@@ -54,16 +55,32 @@
         <p><strong>Description:</strong> {{ device.description }}</p>
         <p><strong>Mobile id:</strong> {{ device.mobile_id }}</p>
 
-        <!--div>
-          <input id="latlng" type="textbox" value="40.714224,-73.961452">
-        </div>
+        {% if locations %}
         <div>
-          <input type="button" value="Reverse Geocode" onclick="codeLatLng()">
-        </div-->
-        <div id="map_canvas" style="height: 400px; width:600px; border: 1px solid black;"></div>
-        <p>&nbsp;</p>
+          <p><strong>Last time seen:</strong></p>
+          <ul>
+            {% if locations.0.address %}
+            <li><strong>Near:</strong> {{ locations.0.address }}</li>
+            {% endif %}
+            <li><strong>Latitude:</strong> {{ locations.0.lat }}</li>
+            <li><strong>Longitude:</strong> {{ locations.0.lon }}</li>
+            <li><strong>Time:</strong> <a href="javascript:codeLatLng('{{ locations.0.lat }}, {{ locations.0.lon }}', '{{ locations.0.address }}')">{{ locations.0.created }}</a></li>
+          </ul>
+        </div>
+        <div id="location">
+          {% if locations.count > 1 %}
+          <p><strong>Location history:</strong></p>
+          <ul>
+          {% for location in locations|slice:"1:" %}
+            <li><a href="javascript:codeLatLng('{{ location.lat }}, {{ location.lon }}', '{{ location.address }}')">{{ location.created }}</a></li>
+          {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+
+        <div id="map_canvas" style="height: 300px; width: 500px; border: 1px solid black;"></div>
         <script type="text/javascript">
-        window.onload = initialize()
-        codeLatLng("-23.4770036,-46.6028551")
+          window.onload = initialize()
         </script>
+        {% endif %}
 {% endblock content_right %}

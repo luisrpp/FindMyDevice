@@ -1,0 +1,57 @@
+[
+    {
+        "pk": 5, 
+        "model": "core.devicelocation", 
+        "fields": {
+            "device": 1, 
+            "lat": "-23.4762281", 
+            "created": "2012-01-27 18:38:37", 
+            "lon": "-46.6037927", 
+            "address": "R. En\u00f3tria, 252 - Tucuruvi, Sao Paulo - S\u00e3o Paulo, 02309-100, Brazil"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "core.devicelocation", 
+        "fields": {
+            "device": 1, 
+            "lat": "-23.5612079", 
+            "created": "2012-01-27 15:50:02", 
+            "lon": "-46.6564119", 
+            "address": "R. Pl\u00ednio Figueiredo, 2-64 - Bela Vista, Sao Paulo - S\u00e3o Paulo, 01308-080, Brazil"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "core.devicelocation", 
+        "fields": {
+            "device": 1, 
+            "lat": "-23.5856534", 
+            "created": "2012-01-27 15:36:17", 
+            "lon": "-46.6552384", 
+            "address": "Av. Pedro \u00c1lvares Cabral, 884 - Moema, Sao Paulo - S\u00e3o Paulo, 04094-050, Brazil"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "core.devicelocation", 
+        "fields": {
+            "device": 1, 
+            "lat": "-23.5445179", 
+            "created": "2012-01-27 14:35:06", 
+            "lon": "-46.6392006", 
+            "address": "R. Vinte e Quatro de Maio, 62 - Rep\u00fablica, Sao Paulo - S\u00e3o Paulo, 01041-000, Brazil"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "core.devicelocation", 
+        "fields": {
+            "device": 1, 
+            "lat": "-23.6049319", 
+            "created": "2012-01-27 14:00:01", 
+            "lon": "-46.6940227", 
+            "address": "Pra\u00e7a Gen. Gentil Falc\u00e3o, 60-192 - Itaim Bibi, Sao Paulo - S\u00e3o Paulo, 04571-150, Brazil"
+        }
+    }
+]
