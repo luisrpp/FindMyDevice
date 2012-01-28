@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h1>FindMyDevice API</h1>
+        <img src="{{ STATIC_URL }}images/location_main.png">
+        <ul>
+            <li><strong>Class name:</strong> DeviceLocationHandler</li>
+            <li><strong>uri:</strong> /api/location</li>
+            <li><strong>Methods:</strong>
+                <ul>
+                    <li><strong>create:</strong> to set a new device location.
+                        <ul>
+                            <li><strong>device_name:</strong> name of the registered device.</li>
+                            <li><strong>device_id:</strong> mobile id of the generated device.</li>
+                            <li><strong>lat:</strong> latitude</li>
+                            <li><strong>lon:</strong> longitude</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p>You can try it with curl:</p>
+        <p style="font-family: curier; font-size: 14px;">$ curl -u &lt;USER&gt;:&lt;PASSWORD&gt; "http://findmydevice-luisrpp.herokuapp.com/api/location/?format=json" \<br/>-F "device_name=&lt;YOUR_DEVICE&gt;" -F "device_id=&lt;MOBILE_ID&gt;" -F "lat=&lt;LAT&gt;" -F "lon=&lt;LON&gt;"</p>
+{% endblock content %}

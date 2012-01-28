@@ -3,8 +3,11 @@
 import os
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+if 'True' == os.environ.get('DISABLE_DEBUG', 'False'):
+    DEBUG = False
+else:
+    DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
