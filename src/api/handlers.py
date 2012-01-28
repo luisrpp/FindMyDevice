@@ -6,6 +6,8 @@ from piston.utils import rc
 
 from core.models import Device, DeviceLocation
 
+from googlemaps import GoogleMaps, GoogleMapsError
+
 
 class DeviceLocationHandler(BaseHandler):
     """DeviceLocation handler class for the RESTful API."""
@@ -29,9 +31,16 @@ class DeviceLocationHandler(BaseHandler):
         except Device.DoesNotExist:
             return rc.NOT_FOUND
 
+        gmaps = GoogleMaps()
+        try:
+            address = gmaps.latlng_to_address(float(attrs['lat']), float(attrs['lon']))
+        except GoogleMapsError:
+            address = None
+
         device_location = DeviceLocation(device=device,
-                                         lat=int(attrs['lat']),
-                                         lon=int(attrs['lon']),
+                                         address=address,
+                                         lat=float(attrs['lat']),
+                                         lon=float(attrs['lon']),
                                          created=datetime.datetime.now())
         device_location.save()
 
