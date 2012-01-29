@@ -7,7 +7,8 @@ if 'True' == os.environ.get('DISABLE_DEBUG', 'False'):
     DEBUG = False
 else:
     DEBUG = True
-    TEMPLATE_DEBUG = DEBUG
+
+TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
